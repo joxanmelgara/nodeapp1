@@ -1,0 +1,96 @@
+<div class="main-content hide" id="view-usuarios">
+  <!-- Topnav -->
+
+  <!-- Header -->
+  <!-- Header -->
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Usuarios</h6>
+          </div>
+        </div>
+        <!-- Card stats -->
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <!-- DATOS GENERALES DE FACTURA -->
+      <div class="col-xl-9">
+        <div class="card bg-white">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-black text-uppercase ls-1 mb-1">
+                  Creacion de Usuarios
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form action="" id="form-usuarios">
+              <div class="row">
+                <input type="hidden" name="id">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="text" name="userName" id="" class="form-control form-control-sm form-control-alternative"
+                      placeholder="Nombre de usuario" required />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="password" name="password" id="" class="form-control form-control-sm form-control-alternative"
+                      placeholder="Contrasena" required />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select name="permiso" id="" class="form-control form-control-sm form-control-alternative" required>
+                      <option value="">Seleccione un permiso</option>
+                      <option value="Ventas">Ventas</option>
+                      <option value="Admin">Administrador</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-primary btn-sm" id="btn-usuarios">Crear</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TABLA DE DETALLES DE FACTURA -->
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card-header">
+          <div class="col">
+            <h6 class="text-black text-uppercase ls-1 mb-1">
+              Lista de usuarios
+            </h6>
+          </div>
+          <div class="table-responsive">
+            <table id="example" class="table table-striped table-bordered" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>Acciones</th>
+                  <th>Usuario</th>
+                  <th>Permiso</th>
+                </tr>
+              </thead>
+              <tbody id="table-usuarios"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+  </div>
+</div>

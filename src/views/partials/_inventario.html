@@ -1,0 +1,176 @@
+<!-- Main content -->
+<div class="main-content hide" id="view-inventario">
+  <!-- Topnav -->
+
+  <!-- Header -->
+  <!-- Header -->
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+            <h6 class="h2 text-white d-inline-block mb-0">Inventario</h6>
+          </div>
+        </div>
+
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--6">
+    <div class="row">
+      <div class="col-xl-9">
+        <div class="card bg-white">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-light text-uppercase ls-1 mb-1">
+                  Datos Generales
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <form action="" id="form-productos">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="varchar" name="codBarra" id="CodigoBarraProducto" class="form-control form-control-sm form-control-alternative"
+                      placeholder="Código Barras" />
+                    <span id="validacion-codBarra" class="text-danger text-sm hide">Oops.. el codigo ingrasdo ya
+                      existe.</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="varchar" class="form-control form-control-sm form-control-alternative" name="nombre" id="nombreProducto"
+                      placeholder="Nombre" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="number" class="form-control form-control-sm form-control-alternative" name="precioCompra"
+                      id="precioCompraProducto" placeholder="Precio Compra" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="number" class="form-control form-control-sm form-control-alternative" name="precioVenta"
+                      id="precioVentaProducto" placeholder="Precio Venta" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="number" name="cantidad" class="form-control form-control-sm form-control-alternative" id="stockProducto"
+                      placeholder="Cantidad" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="varchar" name="descripcion" class="form-control form-control-sm form-control-alternative"
+                      id="descripcionProducto" placeholder="Descripción" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select name="categoria" id="cmbCategoriasProducto" class="form-control form-control-sm form-control-alternative"></select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select name="marca" id="cmbMarcaProducto" class="form-control form-control-sm form-control-alternative"></select>
+                  </div>
+                </div>
+                <button type="button" id="guardarProducto" class="btn-1 btn btn-xs btn-success btn-sm icon-floppy" style="top:-3px;height: 30px;">
+                  Enviar
+                </button>
+                <button type="button" id="actualizarProducto" class="btn-1 btn btn-sm btn-info btn-sm icon-arrows-cw" style="top:-3px; height: 30px;">
+                  Actualizar
+                </button>
+              </div>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3">
+        <div class="card">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-uppercase text-muted ls-1 mb-1">Opciones</h6>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <button type="button" class="btn btn-success btn-xs btn-block" data-toggle="modal"
+              data-target="#modalCategoria">
+              Agregar Categoria
+            </button>
+            <button type="button" class="btn btn-success btn-xs btn-block" data-toggle="modal"
+              data-target="#modalMarcas">
+              Agregar Marca
+            </button>
+            <button type="button" class="btn btn-success btn-xs btn-block" data-toggle="modal"
+              data-target="#modalMinStock">
+              Bajos en stock
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-header">
+          <div class="col">
+            <h6 class="text-black text-uppercase ls-1 mb-1">
+              Lista de productos
+            </h6>
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" name="txtBuscarProducto" id="txtBuscarProducto" class="form-control form-control-alternative"
+                  placeholder="Escribe un nombre,marca,categoria,codBarra" />
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <table id="example" class="table table-striped table-bordered" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th>Acciones</th>
+                    <th>Cod Barra</th>
+                    <th>Nombre</th>
+                    <th>Precio Com</th>
+                    <th>Precio Ven</th>
+                    <th>Stock</th>
+                    <th>Descripcion</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                  </tr>
+                </thead>
+                <tbody id="table-productos"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+
+      </div>
+      <!-- Page content -->
+
+      <style>
+        .form-group input {
+          margin: 5px;
+        }
+
+        .btn-1 {
+          height: 40px;
+          top: 10px;
+        }
+      </style>
+    </div>
+  </div>
+</div>
